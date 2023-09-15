@@ -85,6 +85,11 @@ void loop() {
       Serial.println("Pressed Right");
       turnRight();
     }
+
+    if (checkDistanceCM() < 10) {
+          Serial.println("Found Obstacle");
+          stop();
+    }
   } else if (controlMode == ROBOT_MODE) {
     if (checkDistanceCM() < 10) {
       Serial.println("Found Obstacle");
